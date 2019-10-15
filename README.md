@@ -1,6 +1,6 @@
 ## About The Project
 
-Tetris, but the cmd
+Tetris, but in the cmd
 >**Still working on it but it kind of works...**
 
 ## Installation
@@ -18,6 +18,7 @@ Tetris, but the cmd
 |---|---|
 | Arrow Keys | Move / Drop |
 | Space Key	| Rotate	|
+>**Controls may change**
 
 ## Roadmap
 
