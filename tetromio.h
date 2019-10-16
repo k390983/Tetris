@@ -320,7 +320,7 @@ void shape(){
 
 }
 
-int collision(){
+void xCollision(){
 
     int y, x;
     int r;
@@ -329,32 +329,13 @@ int collision(){
         for(x = 0; x < 12; x++){
             if(screen[y][x] == 1){
 
-                r = 0;
-
                 if(x == 0){
                     centerPos_x ++;
-                    r = 1;
+                    return;
 
                 }else if(x == 11){
                     centerPos_x --;
-                    r = 1;
-
-                }
-
-                if(y == 22){
-                    changeState();
-                    r = 2;
-
-                }
-
-                if(screen[y + 1][x] == 2){
-                    changeState();
-                    r = 2;
-
-                }
-
-                if(r != 0){
-                    return(r);
+                    return;
 
                 }
 
@@ -363,6 +344,35 @@ int collision(){
         }
 
     }
+
+}
+
+int yCollision(){
+
+    int y, x;
+    int r;
+
+    for(y = 0; y < 23; y++){
+        for(x = 0; x < 12; x++){
+            if(screen[y][x] == 1){
+
+                if(y == 22){
+                    changeState();
+                    return(1);
+
+                }else if(screen[y + 1][x] == 2){
+                    changeState();
+                    return(1);
+
+                }
+
+            }
+
+        }
+
+    }
+
+    return(0);
 
 }
 

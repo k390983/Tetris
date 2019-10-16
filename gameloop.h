@@ -79,33 +79,34 @@ void gameloop(){
         if(currentTime - timeFromMove > MOVESPEED){
             timeFromMove = timeFromStart();
 
-            //horizontal movement
-
-            centerPos_x += control_x;
-
-            control_x = 0;
-
             //Vertical movement
 
-            centerPos_y += control_y;
+            if(control_y != 0){
+                centerPos_y += control_y;
+                control_y = 0;
 
-            control_y = 0;
-
-            shape();
-
-            switch(collision()){
-                case 2:
+                shape();
+                if(yCollision() == 1){
                     spawner();
-                    break;
 
-                default:
-                    break;
+                }
+                shape();
 
             }
+            
 
-            shape();
+            //Horizontal movement
 
-            draw();
+            if(control_x != 0){
+                centerPos_x += control_x;
+
+                control_x = 0;
+
+                shape();
+                xCollision();
+                shape();
+
+            }
 
         }
 
@@ -116,23 +117,14 @@ void gameloop(){
             
             centerPos_y++;
 
-        }
+            shape();
+            if(yCollision() == 1){
+                    spawner();
 
-        //Collisions
-
-        shape();
-
-        switch(collision()){
-            case 2:
-                spawner();
-                break;
-
-            default:
-                break;
+            }
+            shape();
 
         }
-
-        shape();
 
         //Check rows
 
