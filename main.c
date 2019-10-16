@@ -5,9 +5,8 @@ gcc main.c -o Tetris
 */
 
 /*---DESKTOP---
-cd C:\Users\Kai\Desktop\programing\tetris\0.1
+cd C:\Users\Kai\Desktop\programing\Tetris
 gcc main.c -o Tetris
-Tetris
 
 */
 
@@ -16,6 +15,7 @@ Tetris
 #include <windows.h>
 #include <time.h>
 
+#include "colours.h"
 #include "global.h"
 #include "clock.h"
 #include "spawner.h"

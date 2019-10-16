@@ -4,6 +4,7 @@ extern int screen[23][12];
 extern int centerPos_x;
 extern int centerPos_y;
 extern int type;
+extern int next_type;
 extern int rotation;
 
 extern int input_flag;

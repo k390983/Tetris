@@ -39,6 +39,8 @@ void gameloop(){
 
     score = 0;
 
+    next_type = (rand() % 6) + 1;
+
     startup();
 
     spawner();
