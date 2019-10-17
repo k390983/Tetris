@@ -320,7 +320,11 @@ void shape(){
 
 }
 
-void xCollision(){
+//Checks horizontal collision
+//xCollision(int check direction)
+//-1 = left, 1 = right
+
+int xCollision(int d){
 
     int y, x;
     int r;
@@ -329,13 +333,25 @@ void xCollision(){
         for(x = 0; x < 12; x++){
             if(screen[y][x] == 1){
 
-                if(x == 0){
-                    centerPos_x ++;
-                    return;
+                if(d == -1){
 
-                }else if(x == 11){
-                    centerPos_x --;
-                    return;
+                    if(x == 1){
+                        return(1);
+
+                    }else if(screen[y][x - 1] == 2){
+                        return(1);
+
+                    }
+
+                }else if(d == 1){
+
+                    if(x == 10){
+                        return(1);
+
+                    }else if(screen[y][x + 1] == 2){
+                        return(1);
+
+                    }
 
                 }
 
@@ -344,6 +360,8 @@ void xCollision(){
         }
 
     }
+
+    return(0);
 
 }
 

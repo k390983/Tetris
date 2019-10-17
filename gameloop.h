@@ -70,6 +70,15 @@ void gameloop(){
 
                 control_r = 0;
 
+                shape();
+
+                if(yCollision() == 1){
+                    spawner();
+
+                }
+
+                shape();
+
             }
 
         }
@@ -83,13 +92,16 @@ void gameloop(){
 
             if(control_y != 0){
                 centerPos_y += control_y;
-                control_y = 0;
 
                 shape();
+
                 if(yCollision() == 1){
                     spawner();
 
                 }
+
+                control_y = 0;
+
                 shape();
 
             }
@@ -98,13 +110,16 @@ void gameloop(){
             //Horizontal movement
 
             if(control_x != 0){
-                centerPos_x += control_x;
+
+                shape();
+
+                if(xCollision(control_x) == 0){
+                    centerPos_x += control_x;
+                    shape();
+
+                }
 
                 control_x = 0;
-
-                shape();
-                xCollision();
-                shape();
 
             }
 
@@ -115,13 +130,15 @@ void gameloop(){
         if(currentTime - timeFromDrop > DROPSPEED){
             timeFromDrop = timeFromStart();
             
-            centerPos_y++;
-
             shape();
+
             if(yCollision() == 1){
                     spawner();
 
             }
+
+            centerPos_y++;
+
             shape();
 
         }
