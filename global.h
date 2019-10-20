@@ -22,3 +22,6 @@ extern int control_r;
 
 extern int score;
 extern int level;
+extern int lines;
+
+extern float fps;

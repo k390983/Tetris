@@ -13,6 +13,10 @@ int control_y;
 int control_r;
 
 int score;
+int lines;
+int level;
+
+float fps;
 
 #define SLEEP 150
 #define DROPSPEED 1
@@ -27,6 +31,7 @@ void gameloop(){
     float timeFromMove = 0;
     float timeFromInput = 0;
     float timeFromRotate  =0;
+    float previousFrame = 0;
     float currentTime = 0;
 
     centerPos_x = 0;
@@ -38,10 +43,14 @@ void gameloop(){
     int input_L = 0;
 
     score = 0;
+    level = 0;
+    lines = 0;
 
     next_type = (rand() % 6) + 1;
 
     startup();
+
+    randomizeColours();
 
     spawner();
 
@@ -52,6 +61,10 @@ void gameloop(){
         control();
 
         currentTime = timeFromStart();
+
+        fps = 1 / (currentTime - previousFrame);
+
+        previousFrame = timeFromStart();
 
         //Rotation
 
@@ -129,7 +142,7 @@ void gameloop(){
 
         //Drop
 
-        if(currentTime - timeFromDrop > DROPSPEED){
+        if(currentTime - timeFromDrop > ((DROPSPEED * 1) / (1 + level * 0.5))){
             timeFromDrop = timeFromStart();
             
             shape();
