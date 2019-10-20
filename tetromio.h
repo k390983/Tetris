@@ -455,8 +455,8 @@ void check(){
 
     for(x = 0; x < 12; x++){
         if(screen[3][x] == 2){
-            
-            
+            GameOver();
+
         }
 
     }

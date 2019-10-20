@@ -15,15 +15,17 @@ gcc main.c -o Tetris
 #include <windows.h>
 #include <time.h>
 
-#include "colours.h"
+#include "cmd.h"
 #include "global.h"
 #include "clock.h"
+#include "scenes.h"
 #include "spawner.h"
 #include "startup.h"
 #include "tetromio.h"
 #include "control.h"
 #include "draw.h"
 #include "gameloop.h"
+
 
 int level;
 

@@ -12,7 +12,7 @@ int level;
 // printScreen(int y position, int x position)
 void printScreen(int y, int x){
 
-    colour_red_black();
+    ConsoleColour(4, 0, 1, 1);
 
     switch(screen[y + 3][x + 1]){
         case 0:
@@ -34,7 +34,7 @@ void printScreen(int y, int x){
 //prints next piece
 void printNext(int y){
 
-    colour_red_white();
+    ConsoleColour(4, 7, 1, 1);
 
     switch(next_type){
         case 1:
@@ -155,7 +155,7 @@ void draw(){
     coord.Y = 0;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 
-    colour_blue_black();
+    ConsoleColour(1, 0, 1, 1);
     for(i = 0; i < 17; i++){
         printf("██");
 
@@ -164,7 +164,7 @@ void draw(){
     printf("\n");
 
     for(i = 0; i < 20; i++){
-        colour_blue_black();
+        ConsoleColour(1, 0, 1, 1);
         printf("██");
 
         for(j = 0; j < 10; j++){
@@ -172,10 +172,10 @@ void draw(){
 
         }
 
-        colour_blue_black();
+        ConsoleColour(1, 0, 1, 1);
         printf("██");
 
-        colour_black_white();
+        ConsoleColour(0, 7, 1, 1);
         switch(i){
             case 0:
                 printf("LEVEL: %d", level);
@@ -208,12 +208,12 @@ void draw(){
         }
         
 
-        colour_blue_black();
+        ConsoleColour(1, 0, 1, 1);
         printf("██\n");
 
     }
 
-    colour_blue_black();
+    ConsoleColour(1, 0, 1, 1);
     for(i = 0; i < 17; i++){
         printf("██");
 

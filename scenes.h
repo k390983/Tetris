@@ -1,6 +1,9 @@
 
 void GameOver(){
-	System("cls");
+	int i, j;
+
+	system("cls");
 	
+	printf("GAME OVER");
 
 }
