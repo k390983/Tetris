@@ -91,18 +91,20 @@ void gameloop(){
             //Vertical movement
 
             if(control_y != 0){
-                centerPos_y += control_y;
 
                 shape();
 
-                if(yCollision() == 1){
+                if(yCollision() == 0){
+                    centerPos_y += control_y;
+                    
+                }else{
                     spawner();
 
                 }
 
-                control_y = 0;
-
                 shape();
+
+                control_y = 0;
 
             }
             
@@ -133,7 +135,7 @@ void gameloop(){
             shape();
 
             if(yCollision() == 1){
-                    spawner();
+                spawner();
 
             }
 

@@ -1,0 +1,6 @@
+
+void GameOver(){
+	System("cls");
+	
+
+}

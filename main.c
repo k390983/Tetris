@@ -1,5 +1,5 @@
 /*---LAPTOP---
-cd C:\Users\Kitagawa-Jones\Desktop\Kai\programing\tetris\0.1
+cd C:\Users\Kitagawa-Jones\Desktop\programing\Tetris
 gcc main.c -o Tetris
 
 */
