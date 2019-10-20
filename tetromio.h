@@ -15,7 +15,7 @@ void changeState(){
         for(x = 0; x < 12; x++){
             if(screen[y][x] == 1){
                 
-                screen[y][x] = 2;
+                screen[y][x] = type + 1;
 
             }
 
@@ -338,7 +338,7 @@ int xCollision(int d){
                     if(x == 1){
                         return(1);
 
-                    }else if(screen[y][x - 1] == 2){
+                    }else if(screen[y][x - 1] > 1){
                         return(1);
 
                     }
@@ -348,7 +348,7 @@ int xCollision(int d){
                     if(x == 10){
                         return(1);
 
-                    }else if(screen[y][x + 1] == 2){
+                    }else if(screen[y][x + 1] > 1){
                         return(1);
 
                     }
@@ -378,7 +378,7 @@ int yCollision(){
                     changeState();
                     return(1);
 
-                }else if(screen[y + 1][x] == 2){
+                }else if(screen[y + 1][x] > 1){
                     changeState();
                     return(1);
 
@@ -412,14 +412,14 @@ void check(){
 
     int x, y;
     int count;
-    int lines = 0;
+    int line = 0;
 
     for(y = 22; y > 0; y--){
 
         count = 0;
 
         for(x = 1; x < 11; x++){
-            if(screen[y][x] == 2){
+            if(screen[y][x] > 1){
                 count++;
 
             }
@@ -428,13 +428,13 @@ void check(){
 
         if(count == 10){
             destroy(y);
-            lines++;
+            line++;
 
         }
 
     }
 
-    switch(lines){
+    switch(line){
         case 1:
             score += (40 * (level + 1));
             break;
@@ -454,7 +454,7 @@ void check(){
     }
 
     for(x = 0; x < 12; x++){
-        if(screen[3][x] == 2){
+        if(screen[3][x] > 1){
             GameOver();
 
         }

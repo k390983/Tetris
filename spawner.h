@@ -4,6 +4,7 @@ int centerPos_y;
 int type;
 int next_type;
 int rotation;
+int lines;
 
 void spawner(){
     type = next_type;
@@ -12,6 +13,13 @@ void spawner(){
     centerPos_x = 6;
     rotation = 1;
 
-    next_type = (rand() % 6) + 1;
+    next_type = (rand() % 7) + 1;
+
+    lines++;
+
+    if(lines % 10 == 0){
+    	level++;
+
+    }
 
 }
