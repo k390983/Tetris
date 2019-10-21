@@ -18,6 +18,8 @@ int level;
 
 float fps;
 
+int is_music_playing;
+
 #define SLEEP 150
 #define DROPSPEED 1
 #define MOVESPEED 0.1
@@ -46,6 +48,8 @@ void gameloop(){
     level = 0;
     lines = 0;
 
+    is_music_playing = 0;
+
     next_type = (rand() % 6) + 1;
 
     startup();
@@ -57,6 +61,12 @@ void gameloop(){
     centerPos_x = 5;
 
     while(1){
+
+        if(is_music_playing == 0){
+            play_main_theme();
+            is_music_playing = 1;
+
+        }
 
         control();
 

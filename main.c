@@ -1,30 +1,20 @@
-/*---LAPTOP---
-cd C:\Users\Kitagawa-Jones\Desktop\programing\Tetris
-gcc main.c -o Tetris
-
-*/
-
-/*---DESKTOP---
-cd C:\Users\Kai\Desktop\programing\Tetris
-gcc main.c -o Tetris
-
-*/
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <windows.h>
 #include <time.h>
 
-#include "cmd.h"
-#include "global.h"
-#include "clock.h"
-#include "scenes.h"
-#include "spawner.h"
-#include "startup.h"
-#include "tetromio.h"
-#include "control.h"
-#include "draw.h"
-#include "gameloop.h"
+#include "include//cmd.h"
+#include "include//sounds.h"
+#include "include//global.h"
+#include "include//clock.h"
+#include "include//scenes.h"
+#include "include//startup.h"
+#include "include//draw.h"
+#include "include//tetromio.h"
+#include "include//control.h"
+#include "include//spawner.h"
+#include "include//gameloop.h"
 
 
 int level;

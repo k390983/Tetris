@@ -428,6 +428,8 @@ void check(){
 
         if(count == 10){
             destroy(y);
+            randomizeColours();
+            play_line();
             line++;
 
         }

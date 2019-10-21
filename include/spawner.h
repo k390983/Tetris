@@ -7,6 +7,7 @@ int rotation;
 int lines;
 
 void spawner(){
+    play_drop();
     type = next_type;
     
     centerPos_y = 1;

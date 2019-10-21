@@ -25,3 +25,5 @@ extern int level;
 extern int lines;
 
 extern float fps;
+
+extern int is_music_playing;

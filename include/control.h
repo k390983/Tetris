@@ -74,6 +74,7 @@ void control(){
     	if(input_S == 0){
     		control_r = 1;
     		input_S = 1;
+            play_rotate();
 
     	}
 
