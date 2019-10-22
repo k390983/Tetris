@@ -13,7 +13,7 @@ float inputTimer_R;
 float inputTimer_L;
 float inputTimer_S;
 
-#define INPUT_SPEED 0.4
+#define INPUT_SPEED 0.3
 
 void control(){
 

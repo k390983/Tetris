@@ -22,7 +22,8 @@ float fps;
 int is_music_playing;
 
 #define SLEEP 150
-#define DROPSPEED 1
+#define GRAVITY 1
+#define DROPSPEED 0.08
 #define MOVESPEED 0.1
 #define ROTATIONSPEED 0.2
 
@@ -73,6 +74,8 @@ int gameloop(){
         }
 
     }
+
+    Menu();
 
     while(1){
 
@@ -166,13 +169,9 @@ int gameloop(){
 
         }
 
-        //Movement and collisions
-
-        if(currentTime - timeFromMove > MOVESPEED){
-            timeFromMove = timeFromStart();
-
-            //Vertical movement
-
+        //Vertical movement
+        
+        if(currentTime - timeFromMove > DROPSPEED){
             if(control_y != 0){
 
                 shape();
@@ -190,9 +189,13 @@ int gameloop(){
                 control_y = 0;
 
             }
-            
 
-            //Horizontal movement
+        }
+
+        //Horizontal movement
+
+        if(currentTime - timeFromMove > MOVESPEED){
+            timeFromMove = timeFromStart();
 
             if(control_x != 0){
 
@@ -212,7 +215,7 @@ int gameloop(){
 
         //Drop
 
-        if(currentTime - timeFromDrop > ((DROPSPEED * 1) / (1 + level * 0.5))){
+        if(currentTime - timeFromDrop > ((GRAVITY * 1) / (1 + level * 0.5))){
             timeFromDrop = timeFromStart();
             
             shape();

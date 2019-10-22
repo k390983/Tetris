@@ -24,5 +24,11 @@ void play_rotate(){
 	mciSendString("open sounds//rotate.mp3 type MPEGVideo alias rotate", NULL, 0, 0);
 	mciSendString("play rotate", NULL, 0, 0);
 
+}
+
+void play_game_over(){
+	mciSendString("close game_over", NULL, 0, 0);
+	mciSendString("open sounds//game_over.mp3 type MPEGVideo alias game_over", NULL, 0, 0);
+	mciSendString("play game_over", NULL, 0, 0);
 
 }
