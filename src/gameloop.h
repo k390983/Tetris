@@ -15,6 +15,7 @@ int control_r;
 int score;
 int lines;
 int level;
+int game_over;
 
 float fps;
 
@@ -25,7 +26,7 @@ int is_music_playing;
 #define MOVESPEED 0.1
 #define ROTATIONSPEED 0.2
 
-void gameloop(){
+int gameloop(){
 
     int i, j;
     int x, y;
@@ -38,19 +39,20 @@ void gameloop(){
     float previousFrame = 0;
     float currentTime = 0;
 
-    centerPos_x = 0;
-    centerPos_y = 0;
-
-    input_flag = 0;
-
     int input_R = 0;
     int input_L = 0;
 
     int tmp_screen[23][12];
 
+    centerPos_x = 0;
+    centerPos_y = 0;
+
+    input_flag = 0;
+
     score = 0;
     level = 0;
     lines = 0;
+    game_over = 0;
 
     is_music_playing = 0;
 
@@ -63,6 +65,14 @@ void gameloop(){
     spawner();
 
     centerPos_x = 5;
+
+    for(x = 0; x < 12; x++){
+        for(y = 0; y < 23; y++){
+            screen[y][x] = 0;
+
+        }
+
+    }
 
     while(1){
 
@@ -221,6 +231,11 @@ void gameloop(){
         //Check rows
 
         check();
+
+        if(game_over == 1){
+            return(0);
+
+        }
 
         //Draw
 

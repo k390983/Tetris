@@ -16,13 +16,12 @@
 #include "spawner.h"
 #include "gameloop.h"
 
-
-int level;
-
 int main(void){
 
-	level = 0;
+	while(1){
 
-    gameloop();
+		gameloop();
+
+	}
 
 }

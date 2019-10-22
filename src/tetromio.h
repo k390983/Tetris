@@ -408,7 +408,7 @@ void destroy(int row){
 
 }
 
-void check(){
+int check(){
 
     int x, y;
     int count;
@@ -458,6 +458,7 @@ void check(){
     for(x = 0; x < 12; x++){
         if(screen[3][x] > 1){
             GameOver();
+            return(0);
 
         }
 
