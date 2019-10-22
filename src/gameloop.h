@@ -28,6 +28,8 @@ int is_music_playing;
 void gameloop(){
 
     int i, j;
+    int x, y;
+    int a;
 
     float timeFromDrop = 0;
     float timeFromMove = 0;
@@ -43,6 +45,8 @@ void gameloop(){
 
     int input_R = 0;
     int input_L = 0;
+
+    int tmp_screen[23][12];
 
     score = 0;
     level = 0;
@@ -83,24 +87,70 @@ void gameloop(){
 
             if(control_r == 1){
 
+                control_r = 0;
+
+                for(x = 0; x < 12; x++){
+                    for(y = 0; y < 23; y++){
+                        tmp_screen[y][x] = screen[y][x];
+
+                    }
+
+                }
+
                 if(rotation < 4){
                     rotation += 1;
 
                 }else{
                     rotation = 1;
 
-                }  
-
-                control_r = 0;
-
-                shape();
-
-                if(yCollision() == 1){
-                    spawner();
-
                 }
 
                 shape();
+
+                a = 0;
+                
+                for(x = 0; x < 12; x++){
+                    for(y = 0; y < 23; y++){
+
+                        if(screen[y][x] == 1){
+
+                            if(tmp_screen[y][x] > 1){
+                                a = 1;
+
+                            }
+
+                            if(x == 0 || x == 11){
+                                a = 1;
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                if(a == 1){
+
+                    for(x = 0; x < 12; x++){
+                        for(y = 0; y < 23; y++){
+                            screen[y][x] = tmp_screen[y][x];
+
+                        }
+
+                    }
+
+                    if(rotation > 1){
+                        rotation -= 1;
+
+                    }else{
+                        rotation = 4;
+
+                    }
+
+                    shape();
+
+                }
 
             }
 
