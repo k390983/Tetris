@@ -22,7 +22,7 @@ void GameOver(){
 	fclose(fp);
 
 	if(score > highScoreI){
-		fp = fopen("score.txt","w");
+		fp = fopen("\\log\\score.txt","w");
 		fprintf(fp, "%d", score);
 
 	}

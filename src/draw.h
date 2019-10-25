@@ -306,6 +306,47 @@ void draw(){
             case 6:
                 printNext(1);
                 break;
+
+            case 8:
+                printf("左上ス  ");
+                break;
+
+            case 9:
+                printf("左矢ペ  ");
+                break;
+
+            case 10:
+                printf("矢印｜  ");
+                break;
+
+            case 11:
+                printf("印キス  ");
+                break;
+
+            case 12:
+                printf("キ｜キ  ");
+                break;
+
+            case 13:
+                printf("｜  ｜ ");
+                break;
+
+            case 14:
+                printf("  ド    ");
+                break;
+
+            case 15:
+                printf("移ロ回  ");
+                break;
+
+            case 16:
+                printf("動ッ転  ");
+                break;
+
+            case 17:
+                printf("  プ    ");
+                break;
+
             case 19:
                 printf("%2.2ffps", fps);
                 break;
@@ -315,6 +356,19 @@ void draw(){
                 break;
 
         }
+
+        /*
+        左上ス  
+        左矢ペ  
+        矢印｜  
+        印キス  
+        キ｜キ  
+        ｜  ｜ 
+          ド    
+        移ロ回  
+        動ッ転  
+          プ    
+        */
         
 
         randomColour();
