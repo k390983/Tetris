@@ -8,6 +8,26 @@ void GameOver(){
 	mciSendString("stop main_theme", NULL, 0, 0);
 	play_game_over();
 	system("cls");
+
+	FILE *fp;
+	char highScoreS[100];
+	int highScoreI;
+
+	fp = fopen(".\\log\\score.txt","r");
+
+	fgets(highScoreS,100,fp);
+
+	highScoreI = atoi(highScoreS);
+
+	fclose(fp);
+
+	if(score > highScoreI){
+		fp = fopen("score.txt","w");
+		fprintf(fp, "%d", score);
+
+	}
+
+	fclose(fp);
 	
 	game_over = 1;
 
@@ -30,6 +50,14 @@ void GameOver(){
 			printf("██");
 			ConsoleColour(7, 0, 1, 0);
 			printf("        SCORE: %06d         ", score);
+			ConsoleColour(7, 0, 1 , 0);
+			printf("██");
+
+		}else if(j == 7){
+			ConsoleColour(7, 0, 1 , 0);
+			printf("██");
+			ConsoleColour(7, 0, 1, 0);
+			printf("      HIGHSCORE: %06d       ", highScoreI);
 			ConsoleColour(7, 0, 1 , 0);
 			printf("██");
 
@@ -82,7 +110,7 @@ void GameOver(){
 ██          GAMEOVER            ██
 ██                              ██
 ██        SCORE: 000000         ██
-██                              ██
+██      HIGHSCORE: 000000       ██
 ██                              ██
 ██                              ██
 ██                              ██
