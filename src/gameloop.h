@@ -171,8 +171,10 @@ int gameloop(){
 
         //Vertical movement
         
+        //Soft
+
         if(currentTime - timeFromMove > DROPSPEED){
-            if(control_y != 0){
+            if(control_y == 1){
 
                 shape();
 
@@ -189,6 +191,24 @@ int gameloop(){
                 control_y = 0;
 
             }
+
+        }
+
+        //Hard
+
+        if(control_y == 2){
+
+            shape();
+
+            if(yCollision() == 0){
+                centerPos_y += control_y;
+                
+            }else{
+                spawner();
+
+            }
+
+            shape();
 
         }
 

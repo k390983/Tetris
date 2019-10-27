@@ -6,6 +6,7 @@ int type;
 int rotation;
 int score;
 int level;
+int control_y;
 
 void changeState(){
 

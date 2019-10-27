@@ -60,9 +60,18 @@ void control(){
 
     //Down
 
+    //Soft
+
     if(GetKeyState(VK_DOWN) & 0x8000){
         control_y = 1;
         
+    }
+
+    //Hard
+
+    if(GetKeyState(VK_UP) & 0x8000){
+        control_y = 2;
+
     }
 
     //Rotation
