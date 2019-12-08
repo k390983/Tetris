@@ -67,13 +67,6 @@ void control(){
         
     }
 
-    //Hard
-
-    if(GetKeyState(VK_UP) & 0x8000){
-        control_y = 2;
-
-    }
-
     //Rotation
 
     if((GetKeyState(VK_SPACE) & 0x8000) && currentTime - inputTimer_S > INPUT_SPEED){
